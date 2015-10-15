@@ -22,6 +22,7 @@ convert_from_extras = toolkit.get_validator('convert_from_extras')
 
 class CadastaOrganization(plugins.SingletonPlugin, DefaultOrganizationForm):
     plugins.implements(plugins.IGroupForm, inherit=False)
+    plugins.implements(plugins.IRoutes, inherit=True)
 
     def group_types(self):
         return ('organization', )
@@ -52,6 +53,11 @@ class CadastaOrganization(plugins.SingletonPlugin, DefaultOrganizationForm):
             'cadasta_id': [convert_from_extras, ignore_missing, unicode],
         })
         return schema
+
+    # IRoutes
+    def after_map(self, map):
+        del map._routenames['organization_bulk_process']
+        return map
 
 
 def create_cadasta_organization(key, data, errors, context):
