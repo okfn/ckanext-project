@@ -4,6 +4,10 @@
   {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-full', 'control-large'], attrs={'data-module': 'slug-preview-target'}, is_required=true) }}
 {% endblock %}
 
+{% block package_basic_fields_url %}
+  {{ form.hidden('name', value=data.name) }}
+{% endblock %}
+
 {% block package_basic_fields_tags %}
 {% endblock %}
 
