@@ -146,4 +146,4 @@ def create_cadasta_project(key, data, errors, context):
         convert_to_extras(('cadasta_id',), data, errors, context)
 
     except KeyError, e:
-        log.error('Error calling cadasta api action: {0}').format(e.message)
+        log.error('Error calling cadasta api action: {0}'.format(e.message))
