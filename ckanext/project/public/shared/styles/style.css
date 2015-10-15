@@ -1,0 +1,96 @@
+div{
+    outline:none;
+}
+
+*:focus {
+    outline: none;
+}
+
+.ng-cloak {
+    display:none;
+}
+div.hovercode {
+    display:none;
+    outline: none;
+}
+
+.hovertrigger .hovercode {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+div.tabcontent {
+    height: auto;
+    overflow:  hidden;
+}
+
+
+.small-heading {
+    color: #256c97;
+    font-size:12px;
+    font-weight:bold;
+    display: inline-block;
+    padding: 0px 0px 10px 25px;
+}
+
+.outlines {
+    margin: 5px;
+    padding: 10px 5px;
+    border: 2px solid black;
+}
+
+
+.small-table-container {
+    padding:10px 12px;
+}
+
+.blue {
+    color: #256c97;
+}
+
+.masthead-header span {
+    padding-right: 105px;
+    display: inline-block;
+    float: left;
+}
+
+
+.pull-right {
+    float: right;
+    margin-right: 70px;
+    padding-top:12px;
+}
+
+.container-footer .pull-left {
+    margin-top: 14px;
+    height: 30px;
+}
+
+.grey-btn {
+    background-color: #F2F2F2;
+    border: 1px solid #6E6F70;
+    border-radius: 1px;
+    font-size: 12px;
+    padding: 5px 12px 5px 12px;
+    color:#6E6F70;
+    font-weight: 500;
+}
+
+.cadasta-round-button {
+    background-color: #187794;
+    color: white;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    max-height:28px;
+}
+
+.cadasta-round-button:hover {
+    background-color: #0d4252;
+}
+
+md-dialog > form {
+    overflow:hidden;
+}

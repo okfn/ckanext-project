@@ -1,7 +1,39 @@
-<tr>
-  <td>
-    {{ h.link_to(h.truncate(package.title), h.url_for('project_read', id=package.name)) }}
-  </td>
-  <td>{{ package.author }}</td>
-  <td>{{ h.render_datetime(package.metadata_modified) }}</td>
-</tr>
+{#
+Displays a single dataset of type 'project'.
+
+package        - A package to display.
+item_class     - The class name to use on the list item.
+truncate       - The length to trucate the description to (default: 180)
+truncate_title - The length to truncate the title to (default: 80).
+show_remove    - If True, show the remove button to remove project/dataset association.
+
+#}
+{% set truncate = truncate or 180 %}
+{% set truncate_title = truncate_title or 80 %}
+{% set title = package.title or package.name %}
+{% set notes = h.markdown_extract(package.notes, extract_length=truncate) %}
+
+<div class="project-row">
+
+    <table>
+        <tbody>
+        <tr>
+            <td class="project-title projects">
+                {{ h.link_to(h.truncate(package.title), h.url_for('project_read', id=package.name)) }}
+            </td>
+
+            <td>
+        {% if notes %}
+        <div>{{ notes|urlize }}</div>
+        {% else %}
+        <p class="empty">{{ _("This project has no description") }}</p>
+        {% endif %}
+            </td>
+
+            <td>
+                {{ h.render_datetime(package.metadata_modified) }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

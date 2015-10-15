@@ -1,0 +1,85 @@
+<!--primary content-->
+<div class="clearfix overview-background">
+    <div id="org-header">
+        <div id='org-desc'>
+            <p class="project-description">{{orgDescription}}</p>
+        </div>
+    </div>
+</div>
+
+<!--secondary content-->
+<!--organization projects-->
+<div class="span3">
+    <div id="project-content">
+
+        <div class='overview-background org-projects'>
+            <span class="small-heading">PROJECTS</span>
+            <a href="/project/new"><span class="cadasta-round-button right" ng-click="route_add_project()">ADD PROJECT</span></a>
+
+            <table id="project-table-header">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Last Updated</th>
+                </tr>
+                </thead>
+            </table>
+
+            <div id="projectList">
+                <table>
+                    <tbody>
+                    <tr class="row-link" ng-repeat="project in orgProjects"
+                        ng-class="{'last-table-element':$index == parcels.length-1}">
+
+                        <td><a href="/project/{{project.name}}">{{project.title}}</a></td>
+                        <td>{{project.notes}}</td>
+                        <td>{{project.metadata_modified}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class='mini-overview project-block'>
+
+            <span class="small-heading">LATEST ACTIVITY</span>
+
+            <div ng-repeat="activity in CKANorgActivities">
+                <!-- repeat each activity in the list and depending on the type of activity, print a different string-->
+
+
+                <li ng-if="activity.activity_type === 'changed organization'"
+                    ng-class="{'remove-bottom-border': $index == overviewData.activityList.length-1}"
+                    class="activity-block block">
+                    Organization <span class="bold">{{orgName}}</span> details were updated on {{ activity.timestamp }}
+                </li>
+
+                <li ng-if="activity.activity_type === 'new package'"
+                    ng-class="{'remove-bottom-border': $index == overviewData.activityList.length-1}"
+                    class="activity-block block">
+                    Project <a href="/project/{{project.name}}">{{activity.data.package.title}}</a> was created on {{ activity.timestamp }}
+                </li>
+
+                <li ng-if="activity.activity_type === 'changed package'"
+                    ng-class="{'remove-bottom-border': $index == overviewData.activityList.length-1}"
+                    class="activity-block block">
+                    Project <a href="/project/{{project.name}}">{{activity.data.package.title}}</a> was updated on {{ activity.timestamp }}
+                </li>
+            </div>
+        </div>
+
+        <!-- project resources-->
+        <div class='mini-overview project-block' id="project-resource-summary">
+            <span class="small-heading">ORGANIZATION USERS</span>
+
+            <div ng-repeat="user in orgUsers">
+                <li class="users">
+                    <i class="material-icons blue">account_circle</i>
+                    <a href="/user/{{user.name}}"><span class="bold">{{user.display_name}}</span></a>
+                </li>
+            </div>
+        </div>
+
+    </div>
+</div>

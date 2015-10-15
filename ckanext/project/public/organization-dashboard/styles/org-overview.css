@@ -1,0 +1,284 @@
+.clearfix.overview-background.organization {
+    min-height: 500px;
+    height: auto;
+}
+
+
+.span3 {
+    width: 100%;
+    margin:0;
+    margin-top: 13px;
+}
+
+#project-header {
+    height:auto;
+    margin: 20px 12px 12px 12px;
+    font-family: "Open Sans";
+}
+
+#project-resource-summary {
+    float:right;
+    width:327px;
+    font-size:12px;
+    min-height:200px;
+    height:auto;
+    overflow-x:hidden;
+    border: 1px solid #dcdfe1;
+}
+
+#project-desc {
+    width: 510px;
+    display: inline-block;
+    height: 292px;
+    border: 1px solid #dcdfe1;
+}
+
+#project-desc .small-heading {
+    margin: 8px 0px 0px 0px;
+}
+
+#project-desc table {
+    text-align: center;
+    text-align: left;
+    margin-left: 20px;
+    width:40%;
+    border:none;
+
+}
+
+#project-desc table td {
+    text-align: center;
+    text-align: left;
+    margin-left: 20px;
+    width: 100px;
+
+}
+
+#project-desc .description {
+    margin-left: 20px;
+}
+
+.overview-background .parcel-details-return {
+    margin: 20px 12px 20px 10px;
+    font-weight: bold;
+}
+
+#project-content {
+    margin:0;
+    padding:0;
+    /*background-color: #eef2f5;*/
+}
+
+#project-content ul {
+    padding: 0;
+    margin:0;
+}
+
+.project-block {
+    display: inline-block;
+    text-align:left;
+    background-color:white;
+    font-size:12px;
+    border: none;
+    text-align:top;
+    vertical-align:top;
+    overflow:auto;
+}
+
+.small-heading {
+    color: #256c97;
+    font-size:12px;
+    font-weight:bold;
+    display: inline-block;
+    padding-bottom:10px;
+
+}
+
+.parcel-details-content .small-heading {
+    margin: 20px 0 0 20px;
+}
+
+.mini-overview {
+    width:517px;
+    padding-top:16px;
+    float:left;
+    border: 1px solid #dcdfe1;
+    min-height: 200px;
+    height: auto;
+}
+
+#overviewMap {
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+#project-extent {
+    border: 1px solid #dcdfe1;
+    width:308px;
+    height:291px;
+    display:inline-block;
+    float:right;
+}
+
+.overview-background {
+    margin: 0 auto;
+    height:auto;
+}
+
+#project-resource-summary .resource-download{
+    margin-right: 50px;
+}
+
+li.activity-block {
+    position: relative;
+    padding: 14px 0px 15px 25px;
+}
+
+.remove-bottom-border {
+    border-bottom: none !important;
+}
+
+#project-desc .project-description {
+    padding: 0 20px 0 25px;
+}
+
+.activity-block {
+    display: block;
+    width: 95%;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.project-block {
+    display: inline-block;
+    text-align:left;
+    background-color:white;
+    font-size:12px;
+    /*border: none;*/
+    vertical-align:top;
+    overflow:auto;
+}
+
+.tabcontent {
+    background-color: #eef2f5;
+}
+
+#projectList{
+    font-size: 12px;
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+    margin-bottom: 10px;
+}
+
+#projectList table{
+    text-align: left;
+    width: 98%;
+    margin: auto;
+    background-color: white;
+}
+
+#projectList table *{
+padding-left:20px;
+}
+
+#projectList th {
+    height: 30px;
+}
+
+#projectList tbody tr {
+    border-bottom: 1px solid #dcdfe1;
+    border-left: 1px solid #dcdfe1;
+    border-right: 1px solid #dcdfe1;
+    height: 50px;
+}
+
+#projectList .last-table-element {
+    border-bottom: none;
+}
+
+#projectList tbody {
+    height:200px;
+    overflow-y: auto;
+}
+
+#project-table-header {
+    text-align: left;
+    width: 98%;
+    margin: auto;
+    background-color: white;
+}
+
+
+#project-table-header th {
+    font-size: 12px;
+    color: white;
+    background-color: #51617A;
+    font-weight: 400;
+    text-align: left;
+    padding: 8px;
+    line-height: 20px;
+    padding-left: 20px;
+}
+
+.overview-background.org-projects .small-heading {
+    margin-top:20px;
+}
+
+
+.overview-background.org-projects {
+    height: auto;
+    scroll:auto;
+    margin-bottom: 12px;
+}
+
+#project-resource-summary li.users {
+    margin-left: 24px;
+    line-height: 40px;
+}
+
+#project-resource-summary li.users span{
+    position: relative;
+    bottom: 8px;
+    margin-left: 4px;
+    color: #2d3644;
+}
+
+#org-header {
+    min-height: 100px;
+    height: auto;
+}
+
+#org-desc {
+    margin:25px;
+}
+
+.org-header img {
+    height: 87px;
+    width: 130px;
+    float: left;
+}
+
+.org-header span {
+    position: relative;
+    top: 30px;
+    left: 25px;
+    font-weight: bold;
+}
+
+.overview-background.org-projects .cadasta-round-button {
+    position: relative;
+    top: 12px;
+}
+
+p {
+    font-size: 12px;
+    line-height: 23px;
+}
+
+
+#projectList a {
+    font-size: 12px;
+    color: #373837;
+    font-weight: bold;
+}

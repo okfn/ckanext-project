@@ -17,7 +17,8 @@ file.
 
 {# The content block allows you to replace the content of the page if needed #}
 {%- block content %}
-{% block maintag %}<div id='main-div' role="main">{% endblock %}
+{% block maintag %}
+<div id='main-div' role="main">{% endblock %}
   <div id="content" class="container">
     {% block main_content %}
     {% block flash %}
@@ -45,7 +46,7 @@ file.
     </div>
     {% endblock %}
 
-    <div class="row1 {% block wrapper_class %}{% endblock %}{% if self.secondary()|trim == '' %} no-nav{% endif %}">
+    <div class="row1 clearfix {% block wrapper_class %}{% endblock %}{% if self.secondary()|trim == '' %} no-nav{% endif %}">
 
       {% block primary %}
       <div class=" span9">
@@ -61,7 +62,6 @@ file.
             {% block content_primary_nav %}{% endblock %}
           </header>
           {% endblock %}
-
           <div>
             {% if self.page_primary_action() | trim %}
             <div class="page_primary_action">
@@ -78,25 +78,18 @@ file.
     </div>
     {% block secondary %}
     <div class="span3">
-      {#
-      The secondary_content block can be used to add content to the
-      sidebar of the page. This is the main block that is likely to be
-      used within a template.
-
-      Example:
-
-      {% block secondary_content %}
-      <h2>A sidebar item</h2>
-      <p>Some content for the item</p>
-      {% endblock %}
-      #}
       {% block secondary_content %}{% endblock %}
     </div>
     {% endblock %}
   </div>
+</div>
   {% endblock %}
+  {%- block footer %}
+  {% include "footer.html" %}
+  {% endblock -%}
+
 </div>
-</div>
+
 {% endblock -%}
 
 {#
@@ -104,9 +97,7 @@ Override the footer on a page by page basis by extending this block. If
 making sitewide header changes it is preferable to override the footer.html-u
 file.
 #}
-{%- block footer %}
-{% include "footer.html" %}
-{% endblock -%}
+
 {%- endblock -%}
 
 {%- block scripts %}
@@ -116,5 +107,25 @@ file.
 {% if g.tracking_enabled %}
 {% resource 'base/tracking.js' %}
 {% endif %}
+
+<!--favicon-->
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 {{ super() }}
 {% endblock -%}
