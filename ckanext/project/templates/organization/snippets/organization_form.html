@@ -7,7 +7,7 @@
 
   {% block basic_fields %}
     {% set attrs = {'data-module': 'slug-preview-target'} %}
-    {{ form.input('title', label=_('Name'), id='field-name', placeholder=_('My Organization'), value=data.title, error=errors.title, classes=['control-medium'], attrs=attrs) }}
+    {{ form.input('title', label=_('Name'), id='field-name', placeholder=_('My Organization'), value=data.title, error=errors.title, classes=['control-medium'], attrs=attrs, is_required=true) }}
 
     {# Perhaps these should be moved into the controller? #}
     {% set prefix = h.url_for(controller='organization', action='read', id='') %}
@@ -21,7 +21,7 @@
 
     {{ form.input("contact", id="field-contact", label=_("Contact Information"), placeholder=_("xxx-xxx-xxxx"), value=data.contact, error=errors.contact, classes=["control-medium"]) }}
 
-    [GET]   {{ form.input("orgURL", id="field-orgURL", label=_("URL"), placeholder=_("www.myorganization.com"), value=data.orgURL, error=errors.orgURL, classes=["control-medium"]) }}
+    {{ form.input("orgURL", id="field-orgURL", label=_("URL"), placeholder=_("www.myorganization.com"), value=data.orgURL, error=errors.orgURL, classes=["control-medium"]) }}
 
     {{ form.input("ona_api_token", id="field-ona_api_token", label=_("ONA API Token"), placeholder=_("..."), value=data.ona_api_token, error=errors.ona_api_token, classes=["control-medium"]) }}
 
